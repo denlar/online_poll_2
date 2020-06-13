@@ -1,7 +1,6 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: win-64
-alabaster=0.7.12=py_0
 argh=0.26.2=py37_1001
 astroid=2.4.2=py37hc8dfbb8_0
 atomicwrites=1.4.0=pyh9f0ad1d_0
@@ -29,6 +28,7 @@ flake8=3.7.9=py37hc8dfbb8_1
 flask=1.1.2=pyh9f0ad1d_0
 flask-cors=3.0.8=py_0
 flask-sqlalchemy=2.4.3=pyh9f0ad1d_0
+gunicorn=20.0.4
 future=0.18.2=py37hc8dfbb8_1
 icu=64.2=he025d50_1
 idna=2.9=py_1
@@ -133,7 +133,6 @@ ujson=1.35=py37h63f7a3c_1002
 urllib3=1.25.9=py_0
 vc=14.1=h869be7e_1
 vs2015_runtime=14.16.27012=h30e32a0_2
-waitress=1.4.3=py_0
 watchdog=0.10.2=py37_0
 wcwidth=0.2.4=pyh9f0ad1d_0
 webencodings=0.5.1=py_1
