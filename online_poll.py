@@ -2,9 +2,12 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy 
 from datetime import datetime
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
+app = Flask(__name__, instance_relative_config = True)
+app.config.from_pyfile("config.py")
+#app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
 db = SQLAlchemy(app)
+
+db.init_app(app)
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key = True)
