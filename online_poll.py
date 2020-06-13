@@ -1,9 +1,17 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy 
 from datetime import datetime
+import os
 
-app = Flask(__name__, instance_relative_config = True)
-app.config.from_pyfile("config.py")
+
+if os.getenv("FLASK_CONFIG") == "production":
+    app = Flask(__name__)
+    app.config.update(
+            SECRET_KEY = os.getenv("SECRET_KEY")
+            SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
+else:
+    app = Flask(__name__, instance_relative_config = True)
+    app.config.from_pyfile("config.py")
 #app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
 db = SQLAlchemy(app)
 
